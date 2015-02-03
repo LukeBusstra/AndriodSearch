@@ -1,0 +1,41 @@
+<section class="apppage">
+  <div class="search">
+    <h1>Android App Search</h1>
+    <label>search: </label>
+    <form ng-submit="search()">
+      <input ng-model="query" placeholder="Search for app" autofocus name="query"><button type="submit" value="search" class=btnSearch> Search </button>
+   </form>
+    <label class="formgroup">by:
+      <select ng-model="appOrder">
+        <option value="rating" selected>Rating</option>
+        <option value="downloadCount">Downloads</option>
+        <option value="keywords">Keywords</option>
+      </select>
+    </label>
+ 
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" value="reverse" checked>
+      Top Rank
+    </label>
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction">
+      Bottom Rank
+     </label>
+
+   
+  </div>
+  <ul class="applist">
+    <li class="app cf" ng-repeat="item in apps | orderBy: appOrder:direction">
+      <a href="#/details/{{apps.indexOf(item)}}">
+      <img ng-src="images/BlankApp.png" alt="Photo of {{item.title}}">
+      <div class="info">
+        <h2 class="inlineLeft">{{item.title}}</h2>
+        <h2 class="inlineRight">{{item.rating}} stars</h2><br>
+        <h3 class="inlineLeft">{{item.category}} - {{item.developer}}</h3>
+        <h4 class="inlineRight">{{item.downloadCount}}</h4><br>
+        <h4 class="inlineRight">downloads</h4>
+      </div>
+      </a>
+    </li>
+  </ul>  
+</section>

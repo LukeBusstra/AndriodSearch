@@ -1,0 +1,15 @@
+<section class="appinfo">
+  <div class="app cf" ng-model="apps">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+    <h1>{{apps[whichItem].title}}</h1>
+    <div class="info">
+      <h3>{{apps[whichItem].category}}</h3>
+      <img ng-src="images/{{apps[whichItem].shortname}}_tn.jpg" alt="photo of {{apps[whichItem].name}}">
+      <div class="bio">{{apps[whichItem].description}}
+        <h3>Recent Changes</h3>{{apps[whichItem].recentUpdate}}
+      </div>
+    </div>
+  </div>
+  <a href="index.html">&laquo; Back to search</a>
+</section>
