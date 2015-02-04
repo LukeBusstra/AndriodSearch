@@ -1,4 +1,4 @@
-package org.example02.test;
+package com.AndroidSearch;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,7 +25,7 @@ import com.gc.android.market.api.model.Market.ResponseContext;
 public class TerminalCrawler {
 	
 	// Path Data to be stored
-	private static String path = "/Users/lukebusstra/Documents/workspace/PlayStoreServlet/WebContent/Data/";
+	private static String path = "/Users/lukebusstra/Documents/workspace/AndroidAppSearch/WebContent/Data/";
 	private static String query = "";
 	private static String queryname = "";
 	private static int Startindex = 0;
@@ -44,6 +44,7 @@ public class TerminalCrawler {
 		String result;
 		// removes spaces from query name
 		queryname = query.replace(" ", "_");
+		System.out.println(queryname);
 		if(!checkFileExsists(queryname)) {
 			System.out.println("Splitting query");
 			String[] querylist = QuerySplitter(query);

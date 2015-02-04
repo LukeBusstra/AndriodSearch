@@ -7,26 +7,22 @@
    </form>
     <label class="formgroup">by:
       <select ng-model="appOrder">
-        <option value="rating">Rating</option>
+        <option value="rating" selected>Rating</option>
         <option value="downloadCount">Downloads</option>
         <option value="keywords">Keywords</option>
       </select>
     </label>
  
     <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" value="reverse" checked>
+      <input type="radio" ng-model="direction" name="reverse" value="reverse" checked>
       Top Rank
     </label>
     <label class="formgroup">
       <input type="radio" ng-model="direction" name="direction">
       Bottom Rank
      </label>
-     
-      <label class="formgroup">
-     	<select ng-model="ResultQuantity">
-		  <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
+     <label class="formgroup">
+     	<select ng-model="ResultQuantity" ng-options="opt as opt.label for opt in options">
 		</select>
 		Results
      </label>

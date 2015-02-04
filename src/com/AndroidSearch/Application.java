@@ -1,4 +1,4 @@
-package org.example02.test;
+package com.AndroidSearch;
 
 import java.util.ArrayList;
 import java.util.HashMap;

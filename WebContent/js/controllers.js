@@ -3,10 +3,17 @@ var appControllers = angular.module('appControllers', []);
 
 appControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
 	
+	 
+	  $scope.appOrder = "rating";
+	  $scope.ResultQuantity = "10";
+
+	  
+	
 	$scope.search = function() {
-		$http.get('http://localhost:8080/Example02/servlet1?query=' + $scope.query).success(function(data) {
+		$http.get('http://localhost:8080/AndroidAppSearch/search?query=' + $scope.query).success(function(data) {
 			$scope.apps = data;
-			$scope.appOrder = Rating;
+
+			
 		});
 	};
 }]);
@@ -14,7 +21,7 @@ appControllers.controller('ListController', ['$scope', '$http', function($scope,
 
 
 appControllers.controller('DetailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-  $http.get('http://localhost:8080/Example02/servlet1?query=data').success(function(data) {
+  $http.get('http://localhost:8080/AndroidAppSearch/search?query=data').success(function(data) {
     $scope.apps = data;
     $scope.whichItem = $routeParams.itemId;
     

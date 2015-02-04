@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
 
+
+	<!-- General -->
+	<!--  <display-name>Android App Search Engine</display-name>
+	<description>This is a prototype Web interface for the Android App Store to test different search techniques within the application enviroment</description>
+	-->
+	
+	<!-- Servlets -->
+	<!-- Provides name, class, description and map to URL /servlet/Search -->
 	<servlet>
-		<servlet-name>Test2</servlet-name>
-		<servlet-class>org.example02.test.ServletExample</servlet-class>
+		<servlet-name>AndroidSearch</servlet-name>
+		<servlet-class>com.AndroidSearch.ServletCrawler</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>Test2</servlet-name>
-		<url-pattern>/servlet1</url-pattern>
+		<servlet-name>AndroidSearch</servlet-name>
+		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 	
 	
